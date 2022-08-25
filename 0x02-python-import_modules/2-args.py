@@ -2,9 +2,13 @@
 
 import sys
 
-if len(sys.argv) - 1 == 0:
-    print("0  arguments.")
+length = len(sys.argv)
+
+if length == 1:
+    print("0 arguments.")
+elif length == 2:
+    print("{} argument:\n1: {}".format(length - 1, sys.argv[1]))
 else:
-    print("{} argumets:".format(len(sys.argv) - 1))
+    print("{} arguments:".format(length - 1))
     for i in range(1, len(sys.argv)):
-        print("{} arguments : {}".format(i, sys.argv[i]))
+        print("{}: {}".format(i, sys.argv[i]))
