@@ -20,7 +20,6 @@ class BaseGeometry():
         """  raise Exception if called  """
         raise Exception("area() is not implemented")
 
-
     def integer_validator(self, name, value):
         """raise Exception if value in not int and less than or equal to 0"""
         if type(value) is not int:
