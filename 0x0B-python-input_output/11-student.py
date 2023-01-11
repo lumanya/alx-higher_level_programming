@@ -37,7 +37,6 @@ class Student:
             return dic
 
     def reload_from_json(self, json):
-        """replace all attribute of the student iinstance"""
-        self.first_name = json['first_name']
-        self.last_name = json['last_name']
-        self.age = json['age']
+        """ Transfer all attribute of json to self"""
+        for k, v in json.items():
+            setattr(self, k, v)
