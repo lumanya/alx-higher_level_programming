@@ -4,6 +4,7 @@
  that has add_integer function that add two number and returns addition numbers
 """
 
+
 def add_integer(a, b=98):
     """ add two number a and b
         a and b must be integerrs or float, otherwise raise TypeError exception
