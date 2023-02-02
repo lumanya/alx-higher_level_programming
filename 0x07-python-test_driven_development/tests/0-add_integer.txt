@@ -1,0 +1,35 @@
+"""
+	This is doctest that used to test 0-add_integer moudule with function
+	test
+"""
+
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+	======Testing a=====
+	>>> add_integer(1 ,1)
+	2
+	>>> add_integer(1.2, 1)
+	2
+	>>> add_integer(True, 1)
+	Traceback (most recent call last):
+		 raise TypeError("a must be an integer")
+	TypeError: a must be an integer
+	>>> add_integer("yes", 1)
+	Traceback (most recent call last):
+		raise TypeError("a must be an integer")
+	TypeError: a must be an integer
+
+	=======Testing b=======
+	>>> add_integer(1, 10)
+	11
+	>>> add_integer(1, 10.1)
+	11
+	>>> add_integer(1, False)
+	Traceback (most recent call last):
+		raise TypeError("b must be an integer")
+	TypeError: b must be an integer
+	>>> add_integer(1, 'yes')
+	Traceback (most recent call last):
+		raise TypeError("b must be an integer")
+	TypeError: b must be an integer
