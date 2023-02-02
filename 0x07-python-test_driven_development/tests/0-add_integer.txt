@@ -39,3 +39,9 @@
 	Traceback (most recent call last):
 		raise TypeError("a must be an integer")
 	TypeError: a must be an integer
+
+	Tesing infinint case
+	>>> add_integer(float("inf"))
+	Traceback (most recent call last):
+		 return int(a) + int(b)
+	OverflowError: cannot convert float infinity to integer
