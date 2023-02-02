@@ -45,3 +45,10 @@
 	Traceback (most recent call last):
 		 return int(a) + int(b)
 	OverflowError: cannot convert float infinity to integer
+
+
+	Test for float Nan number
+	>>> add_integer(float("NaN"))
+	Traceback (most recent call last):
+		return int(a) + int(b)
+	ValueError: cannot convert float NaN to integer
