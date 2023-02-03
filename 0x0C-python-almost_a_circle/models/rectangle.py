@@ -25,6 +25,7 @@ class Rectangle(Base):
     y(self)
     y(self, values)
     area(self)
+    display(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -95,3 +96,10 @@ class Rectangle(Base):
     def area(self):
         """ calculating area of rectangel """
         return self.__height * self.__width
+
+    def display(self):
+        """ print in stdout The rectangel instance with character #"""
+        for height in range(self.__height):
+            for width in range(self.__width):
+                print("#", end="")
+            print()
