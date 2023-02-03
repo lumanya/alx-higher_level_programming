@@ -1,0 +1,56 @@
+# Run python3 -m doctest -v tests/2-matrix_divided.txt
+
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+	TEST FOR matrix arguments
+
+	=====FAIL CASE====
+	>>> matrix_divided([], 2)
+	Traceback (most recent call last):
+		raise TypeError(message)
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix_divided("hello", 2)
+	Traceback (most recent call last):
+		raise TypeError(message)
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix_divided([[]], 2)
+	Traceback (most recent call last):
+		raise TypeError(message)
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix_divided([[1, 2], [1]], 2)
+	Traceback (most recent call last):
+		raise TypeError("Each row of the matrix must have the same size")
+	TypeError: Each row of the matrix must have the same size
+	>>> matrix_divided([[1, "hello"], [1, 2]], 2)
+	Traceback (most recent call last):
+		raise TypeError(message)
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix_divided([[1, float('NaN')], [1, 2]], 2)
+	[[0.5, nan], [0.5, 1.0]]
+	>>> matrix_divided([[1, float('inf')], [1, 2]], 2)
+	[[0.5, inf], [0.5, 1.0]]
+
+
+	TEST FOR div arguments on function
+	=====FAIL CASE======
+	>>> matrix_divided([[1, 2], [2, 3]], True)
+	[[1.0, 2.0], [2.0, 3.0]]
+	>>> matrix_divided([[1, 2], [2, 3]], "hello")
+	Traceback (most recent call last):
+		raise TypeError("div must be a number")
+	TypeError: div must be a number
+	>>> matrix_divided([[1, 2], [2, 3]], float('inf'))
+	[[0.0, 0.0], [0.0, 0.0]]
+	>>> matrix_divided([[1, 2], [2, 3]], float('NaN'))
+	[[nan, nan], [nan, nan]]
+	>>> matrix_divided([[1, 2], [2, 3]], 0)
+	Traceback (most recent call last):
+		raise ZeroDivisionError("division by zero")
+	ZeroDivisionError: division by zero
+
+	SUCCESS CASE
+	>>> matrix_divided([[1, 2], [2, 3]], 2.5)
+	[[0.4, 0.8], [0.8, 1.2]]
+	>>> matrix_divided([[1, 2], [2, 3]], -1.0)
+	[[-1.0, -2.0], [-2.0, -3.0]]
