@@ -26,6 +26,7 @@ class Rectangle(Base):
     y(self, values)
     area(self)
     display(self)
+    __str__(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -103,3 +104,9 @@ class Rectangle(Base):
             for width in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """ print an instance of the class"""
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.__x, self.__y,
+                                                self.__width, self.__height)
