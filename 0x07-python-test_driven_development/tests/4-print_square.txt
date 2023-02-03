@@ -1,0 +1,33 @@
+# run python3 -m doctest -v 4-print_square.txt
+
+First import module to a test
+>>> print_square = __import__('4-print_square').print_square
+
+SUCCESS CASES
+		>>> print_square(2)
+		##
+		##
+		>>> print_square(0)
+
+FAILURE CASES
+testing for negative number
+		>>> print_square(-10)
+		Traceback (most recent call last):
+			raise ValueError("size must be >= 0")
+		ValueError: size must be >= 0
+
+Testing for infinity NaN number
+		>>> print_square(float('inf'))
+		Traceback (most recent call last):
+			raise TypeError("size must be an integer")
+		TypeError: size must be an integer
+		>>> print_square(float('NaN'))
+		Traceback (most recent call last):
+			raise TypeError("size must be an integer")
+		TypeError: size must be an integer
+
+Testing for other data type
+		>>> print_square("hello")
+		Traceback (most recent call last):
+			raise TypeError("size must be an integer")
+		TypeError: size must be an integer
