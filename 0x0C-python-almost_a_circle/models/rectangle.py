@@ -16,6 +16,15 @@ class Rectangle(Base):
 
     methods:
      __init__(self,width, height, x=0, y=0, id=None)
+    width(self)
+    width(self, values)
+    height(self)
+    height(self, values)
+    x(self)
+    x(self, values)
+    y(self)
+    y(self, values)
+    area(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -82,3 +91,7 @@ class Rectangle(Base):
         if values < 0:
             raise ValueError("y must be >= 0")
         self.__y = values
+
+    def area(self):
+        """ calculating area of rectangel """
+        return self.__height * self.__width
