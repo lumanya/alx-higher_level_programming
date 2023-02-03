@@ -1,0 +1,31 @@
+# This this file contains doctestof a module 3-say_my_namee
+# run python3 -m doctest -v /tests/3-say_my_name.txt
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+  SUCCESS CASE
+
+  ==== Test for first name and last name===
+  >>> say_my_name("john", "anania")
+  My name is john anania
+  >>> say_my_name("", "Hello")
+  My name is  Hello
+  >>> say_my_name("john", "")
+  My name is john 
+
+
+  FAILURE CASES
+  =====================
+  >>> say_my_name(234, "anaia")
+  Traceback (most recent call last):
+  		raise TypeError("first_name must be a string")
+  TypeError: first_name must be a string
+  >>> say_my_name("anania", 23)
+  Traceback (most recent call last):
+  		raise TypeError("last_name must be a string")
+  TypeError: last_name must be a string
+  >>> say_my_name(23, 23)
+  Traceback (most recent call last):
+  		raise TypeError("first_name must be a string")
+  TypeError: first_name must be a string
