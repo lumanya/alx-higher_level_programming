@@ -28,6 +28,7 @@ class Rectangle(Base):
     display(self)
     __str__(self)
     update(self, *args)
+    to_dictionary(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -125,6 +126,12 @@ class Rectangle(Base):
     def area(self):
         """ calculating area of rectangel """
         return self.__height * self.__width
+
+    def to_dictionary(self):
+        """ return dictionary represantaion"""
+        dict_rep =  {'id': self.id, 'width': self.__width,
+                     'height': self.__height, 'x': self.__x, 'y': self.__y}
+        return dict_rep
 
     def display(self):
         """ print in stdout The rectangel instance with character #"""
