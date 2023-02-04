@@ -95,7 +95,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = values
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ assing argument to each attributes"""
         if args:
             for k, v in enumerate(args):
@@ -109,6 +109,18 @@ class Rectangle(Base):
                     self.__x = v
                 else:
                     self.__y = v
+        else:
+            for k, value in kwargs.items():
+                if k == "id":
+                    self.id = value
+                elif k == "width":
+                    self.__width = value
+                elif k == "width":
+                    self.__height = value
+                elif k == "x":
+                    self.__x = value
+                elif k == "y":
+                    self.__y = value
 
     def area(self):
         """ calculating area of rectangel """
