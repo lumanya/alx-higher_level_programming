@@ -129,8 +129,8 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ return dictionary represantaion"""
-        dict_rep =  {'id': self.id, 'width': self.__width,
-                     'height': self.__height, 'x': self.__x, 'y': self.__y}
+        dict_rep = {'id': self.id, 'width': self.__width,
+                    'height': self.__height, 'x': self.__x, 'y': self.__y}
         return dict_rep
 
     def display(self):
