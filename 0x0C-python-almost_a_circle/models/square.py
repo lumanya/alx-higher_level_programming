@@ -14,6 +14,9 @@ class Square(Rectangle):
     method:
      __str__(self)
     __init__(self, size, x=0, y=0, id=None
+    size(self)
+    size(self, value)
+    update(self, *args, **kwargs)
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -30,6 +33,29 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """assign attributes"""
+        if args:
+            for k, v in enumerate(args):
+                if k == 0:
+                    self.id = v
+                elif k == 1:
+                    self.size = v
+                elif k == 2:
+                    self.x = v
+                else:
+                    self.y = v
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def __str__(self):
         """ Print [Square] (<id>) <x>/<y> - <size>"""
