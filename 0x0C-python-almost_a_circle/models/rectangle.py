@@ -27,6 +27,7 @@ class Rectangle(Base):
     area(self)
     display(self)
     __str__(self)
+    update(self, *args)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -93,6 +94,21 @@ class Rectangle(Base):
         if values < 0:
             raise ValueError("y must be >= 0")
         self.__y = values
+
+    def update(self, *args):
+        """ assing argument to each attributes"""
+        if args:
+            for k, v in enumerate(args):
+                if k == 0:
+                    self.id = v
+                elif k == 1:
+                    self.__height = v
+                elif k == 2:
+                    self.__width = v
+                elif k == 3:
+                    self.__x = v
+                else:
+                    self.__y = v
 
     def area(self):
         """ calculating area of rectangel """
