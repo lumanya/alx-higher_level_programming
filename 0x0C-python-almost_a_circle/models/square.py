@@ -19,10 +19,20 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ initializing instance of the class and inherting"""
         super().__init__(size, size, x, y, id)
+        self.size = size
 
+    @property
+    def size(self):
+        """ getter pf size """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """ Print [Square] (<id>) <x>/<y> - <size>"""
         return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
-                                                self.id,self.x, self.y,
-                                                self.height)
+                                             self.id, self.x, self.y,
+                                             self.height)
