@@ -17,6 +17,7 @@ class Square(Rectangle):
     size(self)
     size(self, value)
     update(self, *args, **kwargs)
+    to_dictionary(self)
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -33,6 +34,12 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
+
+    def to_dictionary(self):
+        """ return dictionary representaion of an instance"""
+        dict_rep = {'id': self.id, 'size': self.size, 'x': self.x,
+                    'y': self.y}
+        return dict_rep
 
     def update(self, *args, **kwargs):
         """assign attributes"""
