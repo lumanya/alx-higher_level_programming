@@ -115,7 +115,7 @@ class Rectangle(Base):
                     self.id = value
                 elif k == "width":
                     self.__width = value
-                elif k == "width":
+                elif k == "height":
                     self.__height = value
                 elif k == "x":
                     self.__x = value
