@@ -2,6 +2,7 @@
 """
  base is Module contains base class
 """
+import json
 
 
 class Base:
@@ -9,6 +10,9 @@ class Base:
      Base class in which all classes inherit from this
     Attributes:
     __nb_obejects (private): private attribute
+    method:
+    to_json_string(list_dictionaries)
+
     """
 
     __nb_objects = 0
@@ -20,3 +24,10 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if not list_dictionaries:
+            return []
+        else:
+            return json.dumps(list_dictionaries)
