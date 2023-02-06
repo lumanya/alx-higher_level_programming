@@ -13,6 +13,7 @@ class Base:
     method:
     to_json_string(list_dictionaries)
     save_to_file(cls, list_objs)
+    from_json_string(json_string)
     """
 
     __nb_objects = 0
@@ -49,3 +50,16 @@ class Base:
                 objs.append(cls.to_dictionary(o))
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(cls.to_json_string(objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ return the list of JSON representaion json_string
+            Args:
+              json_string: is the string representaion of a list of
+                          dictionaries
+        """
+
+        if json_string is None:
+            return []
+        else:
+            json.loads(json_string)
