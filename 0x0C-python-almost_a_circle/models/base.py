@@ -15,6 +15,7 @@ class Base:
     save_to_file(cls, list_objs)
     from_json_string(json_string)
     create(cls, **dictionary)
+    load_from_file(cls)
     """
 
     __nb_objects = 0
@@ -74,3 +75,17 @@ class Base:
             dum_instance = cls(2, 3)
         dum_instance.update(**dictionary)
         return dum_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """ return list of instances """
+        list_instances = []
+        filename = cls.__name__ + ".json"
+
+        with open(filename, 'r', encoding='utf-8') as f:
+            json_string = f.read()
+            list_output = cls.from_json_string(json_string)
+
+        for instance_ in list_output:
+            list_instances.append(cls.create(**instance_))
+        return list_instances
