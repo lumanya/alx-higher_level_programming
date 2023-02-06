@@ -14,6 +14,7 @@ class Base:
     to_json_string(list_dictionaries)
     save_to_file(cls, list_objs)
     from_json_string(json_string)
+    create(cls, **dictionary)
     """
 
     __nb_objects = 0
@@ -63,3 +64,13 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ return an instance with all attribute set"""
+        if cls.__name__ == "Square":
+            dum_instance = cls(1)
+        if cls.__name__ == 'Rectangle':
+            dum_instance = cls(2, 3)
+        dum_instance.update(**dictionary)
+        return dum_instance
