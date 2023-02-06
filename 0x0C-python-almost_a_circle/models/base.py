@@ -88,6 +88,6 @@ class Base:
 
             for instance_ in list_output:
                 list_instances.append(cls.create(**instance_))
-        except:
-            pass
+        except FileNotFoundError:
+            return list_instances
         return list_instances
