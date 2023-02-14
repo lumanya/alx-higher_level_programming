@@ -1,4 +1,8 @@
--- list the number of records with the smae score  in the table second_table
+-- lists the `score` and number of occurances with each score with 'number'
+-- displays this data sorted by number in descending order
+--
+-- score   number
+-- 10  2
+-- 8   1
 
-SELECT score, COUNT(score) AS 'number' from second_table GROUP BY score
- ORDER BY numbe DESC;
+SELECT score, COUNT(score) AS 'number' FROM second_table GROUP BY score ORDER BY number DESC;
