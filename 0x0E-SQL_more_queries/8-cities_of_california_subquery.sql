@@ -6,7 +6,9 @@
 
 USE hbtn_0d_usa;
 
-SELECT c.id, c.name
-	   FROM states AS s, cities As c
-WHERE s.name = 'California'
-	   ORDER BY c.id;
+SELECT id, name
+	  FROM cities
+WHERE state_id = (
+	  SELECT id FROM states
+	  WHERE name = 'California')
+	  ORDER BY id ASC;
