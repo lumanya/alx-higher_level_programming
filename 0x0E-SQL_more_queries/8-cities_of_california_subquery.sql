@@ -4,12 +4,7 @@
 -- can be different, as per the example)
 -- Results must be sorted in ascending order by cities.id
 
-USE hbtn_0d_usa;
-
-SELECT id, name
-	  FROM cities
-WHERE state_id = (
-	  SELECT id FROM states
-	  WHERE name = 'California')
-	  GROUP BY id
-	  ORDER BY id ASC;
+SELECT c.id, c.name
+	  FROM cities AS C, states AS s
+WHERE c.state_id=s.id AND s.name = 'California'
+	  ORDER BY c.id ASC;
