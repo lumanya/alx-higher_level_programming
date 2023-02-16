@@ -5,6 +5,6 @@
 -- Results must be sorted in ascending order by cities.id
 
 SELECT c.id, c.name
-	  FROM cities AS C, states AS s
+	  FROM cities AS c, states AS s
 WHERE c.state_id=s.id AND s.name = 'California'
 	  ORDER BY c.id ASC;
