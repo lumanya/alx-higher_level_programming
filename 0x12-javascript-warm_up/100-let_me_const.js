@@ -1,3 +1,3 @@
 #!/usr/bin/node
-require('./100-main');
+// overriding Variable in a global space
 myVar = 333;
