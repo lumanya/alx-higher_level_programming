@@ -4,7 +4,7 @@ return all table values (table 'states')
 parameters given to script: username, password, database
 """
 
-from  sys import argv
+from sys import argv
 import MySQLdb
 
 
