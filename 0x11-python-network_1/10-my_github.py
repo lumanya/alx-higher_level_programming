@@ -8,8 +8,11 @@ import sys
 import requests
 
 if __name__ == '__main__':
-    headers = {"Authorization": "Bearer" + sys.argv[2]}
-    url = "https://api.github.com/users/{}".format(sys.argv[1])
-    with requests.get(url, headers=headers) as r:
-        json_data = r.json()
-    print(json_data['id'])
+    username = sys.argv[1]
+    token = sys.argv[2]
+
+    # set up authentication
+    auth = (username, token)
+    url = "https://api.github.com/user"
+    with requests.get(url, auth=auth) as r:
+        print(r.json().get("id"))
