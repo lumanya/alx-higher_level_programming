@@ -7,7 +7,8 @@ import requests
 if __name__ == '__main__':
     repo_name = sys.argv[1]
     owner = sys.argv[2]
-    url = "https://api.github.com/repos/{}/{}/commits".format(repo_name,owner)
+    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo_name)
+    print(url)
     with requests.get(url) as r:
         if r.status_code == 200:
             commits = r.json()
