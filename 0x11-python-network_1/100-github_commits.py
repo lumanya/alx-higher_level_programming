@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-
+""" python script that  prints respo name  and commit
+Requiremts
+- first arguments will be the repository name
+- the second argumets will be the owner name
+- you must use the package requests and ys
+"""
 import sys
 import requests
 
