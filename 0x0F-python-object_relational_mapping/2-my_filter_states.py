@@ -15,7 +15,7 @@ if __name__ == "__main__":
                            passwd=argv[2], db=argv[3], charset="utf8")
     cur = conn.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name = '{}' ORDER BY \
+        "SELECT * FROM states WHERE BINARY name LIKE '{}' ORDER BY \
         states.id ASC".format(argv[4])
     )
     states = cur.fetchall()
