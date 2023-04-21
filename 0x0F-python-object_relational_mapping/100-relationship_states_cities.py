@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+ add state claifornia and its cities in the database
+"""
 
 from relationship_state import Base, State
 from relationship_city import City
