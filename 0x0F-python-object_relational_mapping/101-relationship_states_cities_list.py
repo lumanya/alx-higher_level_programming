@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+ List states and its cities
+"""
 
 from relationship_state import Base, State
 from relationship_city import City
